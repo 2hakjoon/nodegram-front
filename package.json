@@ -29,7 +29,15 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "overrides": [{
+      "files": [
+        "src/**"
+      ],
+      "rules": {
+        "import/no-anonymous-default-export": "off"
+      }
+    }]
   },
   "browserslist": {
     "production": [
