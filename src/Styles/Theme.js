@@ -16,5 +16,6 @@ export default {
                border:${BOX_BORDER};
                background-color:white;
                
-    `
+    `,
+    maxWidth: '935px'
 };
