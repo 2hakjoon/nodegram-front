@@ -7,6 +7,7 @@ const Footer = styled.footer`
     justify-content : space-between;
     align-items: center;
     font-weight : 600;
+    margin: 50px 0px;
 `;
 
 const List = styled.ul`
