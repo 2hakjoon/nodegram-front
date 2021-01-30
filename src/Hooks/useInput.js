@@ -10,5 +10,5 @@ export default (defaultValue) => {
         } = e;
         setValue(value);
     }
-    return { value, onChange };
+    return { value, onChange, setValue };
 }

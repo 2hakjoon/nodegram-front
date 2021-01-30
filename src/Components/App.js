@@ -31,11 +31,13 @@ export default () => {
     <ThemeProvider theme = {Theme}>
     <GlobalStyles/>
     <Router>
-      <Header/>
-      <Wrapper>
-        <AppRouter isLoggedIn={isLoggedIn}/>
-        <Footer/>
-      </Wrapper>
+      <>
+        {isLoggedIn && <Header />}
+        <Wrapper>
+          <AppRouter isLoggedIn={isLoggedIn}/>
+          <Footer/>
+        </Wrapper>
+      </>
     </Router>
       <ToastContainer position={toast.POSITION.BOTTOM_LEFT}/>
     </ThemeProvider>

@@ -1,4 +1,5 @@
 import React from "react";
+import Helmet from "react-helmet";
 import styled from "styled-components";
 import Button from "../../Components/Button";
 import Input from "../../Components/input";
@@ -55,24 +56,39 @@ export default ({
     <Wrapper>
         <Form>
             {action === "logIn" && (
+                <>
+                <Helmet>
+                    <title>Log In | Nodegram</title>
+                </Helmet>
                 <form onSubmit = {onSubmit}>
-                    <Input placeholder={"이메일 주소"}{...email}/>
+                    <Input placeholder={"이메일 주소"} value = {email}/>
                     <Button text={"로그인"}/>
-                </form>)
+                </form>
+                </>
+                )
             }
             {action === "signUp" && (
+                <>
+                <Helmet><title>Sign Up | Nodegram</title></Helmet>
                 <form onSubmit = {onSubmit}>
-                    <Input placeholder={"이메일 주소"}{...email} type="email"/>
-                    <Input placeholder={"성명"}{...username}/>
-                    <Input placeholder={"사용자 이름"}{...userid}/>
+                    <Input placeholder={"이메일 주소"} value = {email.value} onChange = {email.onChange} type="email"/>
+                    <Input placeholder={"성명"} value = {username.value} onChange = {username.onChange}/>
+                    <Input placeholder={"사용자 이름"} value = {userid.value} onchage = {userid.onChange}/>
                     <Button text={"가입"}/>
-                </form>)
+                </form>
+                </>
+                )
             }
             {action === "confirm" &&(
+                <>
+                <Helmet>
+                    <title>Confirm | Nodegram</title>
+                </Helmet>
                 <form onSubmit = {onSubmit}>
-                <Input placeholder={"인증 코드"}{...email} required {...secret}/>
+                <Input placeholder={"인증 코드"} value = {email.value} onChange = {email.onChange} required/>
                 <Button text={"확인"}/>
             </form>
+            </>
             )}
         </Form>
         <StateChanger>
