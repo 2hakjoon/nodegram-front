@@ -4,14 +4,17 @@ import TextareaAutosize from 'react-autosize-textarea';
 import Avatar from "../Avatar";
 import FatText from "../FatText";
 import { Comment as CommentIcon, HeartEmpty, HeartFull } from "../Icons";
+import { Link } from "react-router-dom";
 
 const Post = styled.div`
-    margin-top : 100px;
     ${props => props.theme.whiteBox};
     width:100%;
     max-width : 600px;
     margin-bottom: 25px;
     user-select: none;
+    a{
+        color:inherit;
+    }
 `;
 
 const Header = styled.header`
@@ -109,13 +112,16 @@ export default ({user:{userName, avatar},
     currentItem,
     toggleLike,
     onKeyPress,
-    selfComments
+    selfComments,
+    caption
 }) => (
     <Post>
         <Header>
             <Avatar size = "sm" url={avatar}/>
             <UserColumn>
-                <FatText text={userName}/>
+                <Link to={`/${userName}`}>
+                    <FatText text={userName}/>
+                </Link>
                 <Location>{location}</Location>
             </UserColumn>
         </Header>

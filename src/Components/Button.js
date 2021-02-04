@@ -11,9 +11,10 @@ const Container = styled.button`
     background-color : ${props => props.theme.blueColor};
     text-align: center;
     padding : 10px 0px;
+    cursor: pointer;
 `
 
-const Button = ({text}) => <Container>{text}</Container>
+const Button = ({text, onClick}) => <Container onClick={onClick}>{text}</Container>
 
 Button.propTypes={
     text: PropTypes.string.isRequired

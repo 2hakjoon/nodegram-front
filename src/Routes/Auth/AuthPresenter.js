@@ -61,7 +61,7 @@ export default ({
                     <title>Log In | Nodegram</title>
                 </Helmet>
                 <form onSubmit = {onSubmit}>
-                    <Input placeholder={"이메일 주소"} value = {email}/>
+                    <Input placeholder={"이메일 주소"} value = {email.value} onChange = {email.onChange}/>
                     <Button text={"로그인"}/>
                 </form>
                 </>
@@ -73,7 +73,7 @@ export default ({
                 <form onSubmit = {onSubmit}>
                     <Input placeholder={"이메일 주소"} value = {email.value} onChange = {email.onChange} type="email"/>
                     <Input placeholder={"성명"} value = {username.value} onChange = {username.onChange}/>
-                    <Input placeholder={"사용자 이름"} value = {userid.value} onchage = {userid.onChange}/>
+                    <Input placeholder={"사용자 이름"} value = {userid.value} onChange = {userid.onChange}/>
                     <Button text={"가입"}/>
                 </form>
                 </>

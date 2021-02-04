@@ -37,6 +37,7 @@ const FEED_QUERY = gql`
 `;
 
 const Wrapper = styled.div`
+    padding-top:100px;
     display: flex;
     flex-direction: column;
     align-items: center;
